@@ -8,7 +8,7 @@ using namespace std;
 void Instruction()
 {
     cout << "Использование: ./calc [--operation operation] number1 number2 ... numberN.\n";
-    cout << "Операция подсчета среднего арифметического: --operation sr_arif. Операция медианы: --operation mediana.\n";
+    cout << "Операция подсчетаф среднего арифметического: --operation sr_arif. Операция медианы: --operation mediana.\n";
     cout << "Количество операндов может варьироваться от 5 до 7.\n";
 }
 
@@ -20,10 +20,10 @@ double sr_arif(const vector<double>& numbers)
 
 double calcmedian(vector<double>& numbers)
 {
-    sort(numbers.begin(), numbers.end());
-    size_t size = numbers.size();
-    if (size % 2 == 0) return (numbers[size / 2 - 1] + numbers[size / 2]) / 2.0;
-    else return numbers[size / 2];
+    double middle_value;
+    if (numbers.size()%2!=0) middle_value=numbers[numbers.size()/2];
+    if (numbers.size()%2==0) middle_value=(numbers[numbers.size()/2]+numbers[(numbers.size()/2)-1])/2;
+    return middle_value;
 }
 
 int main(int argc, char* argv[])
