@@ -18,7 +18,7 @@ double sr_arif(const vector<double>& numbers)
     return sum / numbers.size();
 }
 
-double median(vector<double>& numbers)
+double calcmedian(vector<double>& numbers)
 {
     sort(numbers.begin(), numbers.end());
     size_t size = numbers.size();
@@ -58,7 +58,7 @@ int main(int argc, char* argv[])
         double mean = sr_arif(numbers);
         cout << "Среднее арифметическое = " << fixed << setprecision(2) << mean << "\n";
     } else if (operation == "mediana") {
-        double median = median(numbers);
+        double median = calcmedian(numbers);
         cout << "Медиана = " << fixed << setprecision(2) << median << "\n";
     } else {
         cout << "Ошибка: неизвестная операция!.\n";
